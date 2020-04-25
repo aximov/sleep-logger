@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.aximov.sleeplogger.FirstFragment"
+        android:name="com.aximov.sleeplogger.HomeFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -21,9 +21,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.aximov.sleeplogger.SecondFragment"
+        android:name="com.aximov.sleeplogger.DetailsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_details">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
