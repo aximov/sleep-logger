@@ -2,11 +2,15 @@
     <string name="app_name">Sleep Logger</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Top</string>
+    <string name="first_fragment_label">Sleep Logger</string>
     <string name="second_fragment_label">Second view</string>
     <string name="next">Switch view</string>
     <string name="previous">Back to Previous view</string>
 
     <string name="hello_first_fragment">Hello a nice sleeper!</string>
-    <string name="hello_second_fragment">This is Second view. Arg: %1$s</string>
+    <string name="hello_second_fragment">This is Second view.</string>
+
+    <string name="create_sleep_record_fragment_label">Create New Sleep Record</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
