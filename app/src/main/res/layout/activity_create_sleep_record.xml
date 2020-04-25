@@ -5,4 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".CreateSleepRecordActivity">
 
+    <include layout="@layout/content_create_sleep_record" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

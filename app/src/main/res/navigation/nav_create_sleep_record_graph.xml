@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_create_sleep_record_graph"
+    app:startDestination="@id/createSleepRecordFragment">
+
+    <fragment
+        android:id="@+id/createSleepRecordFragment"
+        android:name="com.aximov.sleeplogger.CreateSleepRecordFragment"
+        android:label="@string/create_sleep_record_fragment_label"
+        tools:layout="@layout/fragment_create_sleep_record" >
+        <action
+            android:id="@+id/action_createSleepRecordFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.aximov.sleeplogger.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>
