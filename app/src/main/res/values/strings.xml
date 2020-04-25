@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sleep Logger</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Top</string>
+    <string name="second_fragment_label">Second view</string>
+    <string name="next">Switch view</string>
+    <string name="previous">Back to Previous view</string>
+
+    <string name="hello_first_fragment">Hello a nice sleeper!</string>
+    <string name="hello_second_fragment">This is Second view. Arg: %1$s</string>
+</resources>
