@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.NumberPicker
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -30,6 +31,14 @@ class CreateSleepRecordFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_create_sleep_record, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val durationPicker = view.findViewById<NumberPicker>(R.id.durationPicker)
+        durationPicker.minValue = 0
+        durationPicker.maxValue = 24
+        durationPicker.value = 8
     }
 
     companion object {
