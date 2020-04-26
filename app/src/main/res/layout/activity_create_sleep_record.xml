@@ -3,8 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CreateSleepRecordActivity">
 
-    <include layout="@layout/content_create_sleep_record" />
+    <TextView
+        android:id="@+id/textView_create_sleep_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_sleep_record_fragment_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/message_margin"/>
+
+    <NumberPicker
+        android:id="@+id/durationPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_create_sleep_record"
+        app:layout_constraintBottom_toTopOf="@+id/button_create_sleep_record"/>
+
+    <Button
+        android:id="@+id/button_create_sleep_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_sleep_record_button_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/durationPicker"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
