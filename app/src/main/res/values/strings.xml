@@ -7,7 +7,7 @@
     <string name="next">Switch view</string>
     <string name="previous">Back to Home</string>
 
-    <string name="hello_home_fragment">Hello, nice sleeper!</string>
+    <string name="hello_home_fragment">Hello, a nice sleeper!</string>
     <string name="hello_details_fragment">This is Details view.</string>
 
     <string name="create_sleep_record_fragment_label">Create New Sleep Record</string>
