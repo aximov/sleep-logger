@@ -1,10 +1,14 @@
 package com.aximov.sleeplogger
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.NumberPicker
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +43,16 @@ class CreateSleepRecordFragment : Fragment() {
         durationPicker.minValue = 0
         durationPicker.maxValue = 24
         durationPicker.value = 8
+
+        val button = view.findViewById<Button>(R.id.button_create_sleep_record)
+        button.setOnClickListener {
+            val replyIntent = Intent()
+            val duration = durationPicker.value
+            Log.v("Debug", duration.toString())
+            replyIntent.putExtra(EXTRA_REPLY, duration)
+            this.activity?.setResult(Activity.RESULT_OK, replyIntent)
+            this.activity?.finish()
+        }
     }
 
     companion object {
@@ -56,5 +70,7 @@ class CreateSleepRecordFragment : Fragment() {
                     putString(ARG_PARAM1, param1)
                 }
             }
+
+        const val EXTRA_REPLY = "com.aximov.sleeplogger.sleeplistsql.REPLY"
     }
 }

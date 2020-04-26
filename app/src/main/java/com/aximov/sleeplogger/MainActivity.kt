@@ -1,5 +1,6 @@
 package com.aximov.sleeplogger
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
