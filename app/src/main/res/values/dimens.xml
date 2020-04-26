@@ -1,4 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="message_margin">16dp</dimen>
+    <dimen name="recyclerview_margin">16dp</dimen>
+    <dimen name="bottom_button_margin">16dp</dimen>
 </resources>
