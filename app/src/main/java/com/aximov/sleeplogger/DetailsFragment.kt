@@ -25,13 +25,13 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
-
-        view.findViewById<FloatingActionButton>(R.id.floatingActionButton_second).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_createSleepRecordActivity)
-        }
+//        view.findViewById<Button>(R.id.button_second).setOnClickListener {
+//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+//        }
+//
+//        view.findViewById<FloatingActionButton>(R.id.floatingActionButton_second).setOnClickListener {
+//            findNavController().navigate(R.id.action_SecondFragment_to_createSleepRecordActivity)
+//        }
     }
 
 

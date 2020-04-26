@@ -12,29 +12,27 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-
-        <action
             android:id="@+id/action_FirstFragment_to_createSleepRecordActivity"
             app:destination="@id/createSleepRecordActivity" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.aximov.sleeplogger.DetailsFragment"
-        android:label="@string/details_fragment_label"
-        tools:layout="@layout/fragment_details">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-        <action
-            android:id="@+id/action_SecondFragment_to_createSleepRecordActivity"
-            app:destination="@id/createSleepRecordActivity" />
+            android:id="@+id/action_FirstFragment_to_sleepListFragment"
+            app:destination="@id/sleepListFragment" />
     </fragment>
     <activity
         android:id="@+id/createSleepRecordActivity"
         android:name="com.aximov.sleeplogger.CreateSleepRecordActivity"
         android:label="activity_create_sleep_record"
         tools:layout="@layout/activity_create_sleep_record" />
+    <fragment
+        android:id="@+id/sleepListFragment"
+        android:name="com.aximov.sleeplogger.SleepListFragment"
+        android:label="fragment_sleep_list_list"
+        tools:layout="@layout/fragment_sleep_list_list" >
+        <action
+            android:id="@+id/action_sleepListFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_sleepListFragment_to_createSleepRecordActivity"
+            app:destination="@id/createSleepRecordActivity" />
+    </fragment>
 </navigation>
