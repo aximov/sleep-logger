@@ -4,4 +4,5 @@
     <dimen name="recyclerview_margin">16dp</dimen>
     <dimen name="bottom_button_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="sleep_sum_margin">48dp</dimen>
 </resources>

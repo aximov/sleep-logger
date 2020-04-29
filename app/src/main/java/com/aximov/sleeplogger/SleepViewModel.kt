@@ -11,11 +11,13 @@ class SleepViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: SleepRepository
     val allSleeps: LiveData<List<Sleep>>
+    val sleepLengthSum: LiveData<Int>
 
     init {
         val sleepsDao = SleepRoomDatabase.getDatabase(application).sleepDao()
         repository = SleepRepository(sleepsDao)
         allSleeps = repository.allSleeps
+        sleepLengthSum = repository.sleepLengthSum
     }
 
     fun insert(sleep: Sleep) = viewModelScope.launch(Dispatchers.IO) {

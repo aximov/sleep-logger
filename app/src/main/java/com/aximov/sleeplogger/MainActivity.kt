@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity() {
             // Update the cached copy of the sleeps in the adapter.
             sleeps?.let { adapter.setSleeps(it) }
         })
+        sleepViewModel.sleepLengthSum.observe(this, Observer { sleepSum ->
+            sleepSum?.let { binding.sleepSum.text = it.toString() }
+        })
+
 
         binding.floatingActionButtonFirst.setOnClickListener {
             val intent = Intent(this@MainActivity, CreateSleepRecordActivity::class.java)

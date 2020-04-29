@@ -15,5 +15,7 @@
 
     <string name="create_sleep_record_fragment_message">Choose duration</string>
     <string name="create_sleep_record_button_label">Save</string>
+    <string name="sleep_sum_label">Your sleep sum:</string>
+    <string name="sleep_sum_default">0</string>
 
 </resources>
