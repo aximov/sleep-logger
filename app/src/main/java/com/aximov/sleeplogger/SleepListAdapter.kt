@@ -25,7 +25,7 @@ class SleepListAdapter internal constructor(
 
     override fun onBindViewHolder(holder: SleepViewHolder, position: Int) {
         val current = sleeps[position]
-        holder.sleepItemView.text = current.length.toString()
+        holder.sleepItemView.text = "${current.length}, ${current.date.year}-${current.date.month + 1}-${current.date.date}"
     }
 
     internal fun setSleeps(sleeps: List<Sleep>) {

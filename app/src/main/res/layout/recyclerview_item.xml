@@ -7,6 +7,7 @@
         android:id="@+id/textview_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/sleep_list_row"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
