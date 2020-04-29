@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -18,6 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aximov.sleeplogger.databinding.ActivityMainBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,18 +27,21 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     private lateinit var sleepViewModel: SleepViewModel
     private val createSleepRecordActivityRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview_sleep)
         val adapter = SleepListAdapter(this)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        val layoutManager = LinearLayoutManager(this)
+        binding.apply {
+            recyclerviewSleep.adapter = adapter
+            recyclerviewSleep.layoutManager = layoutManager
+        }
 
         sleepViewModel = ViewModelProvider(this).get(SleepViewModel::class.java)
         sleepViewModel.allSleeps.observe(this, Observer { sleeps ->
@@ -44,8 +49,7 @@ class MainActivity : AppCompatActivity() {
             sleeps?.let { adapter.setSleeps(it) }
         })
 
-        val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton_first)
-        fab.setOnClickListener {
+        binding.floatingActionButtonFirst.setOnClickListener {
             val intent = Intent(this@MainActivity, CreateSleepRecordActivity::class.java)
             startActivityForResult(intent, createSleepRecordActivityRequestCode)
         }
