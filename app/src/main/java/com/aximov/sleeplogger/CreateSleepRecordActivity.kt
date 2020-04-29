@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.NumberPicker
 import androidx.databinding.DataBindingUtil
 import com.aximov.sleeplogger.databinding.ActivityCreateSleepRecordBinding
-import kotlinx.android.synthetic.main.fragment_create_sleep_record.*
 import java.lang.NumberFormatException
 
 class CreateSleepRecordActivity : AppCompatActivity() {
@@ -28,7 +27,7 @@ class CreateSleepRecordActivity : AppCompatActivity() {
 
         binding.buttonCreateSleepRecord.setOnClickListener {
             val replyIntent = Intent()
-            val duration = durationPicker.value
+            val duration = binding.durationPicker.value
             replyIntent.putExtra(EXTRA_REPLY, duration)
             setResult(Activity.RESULT_OK, replyIntent)
             finish()
