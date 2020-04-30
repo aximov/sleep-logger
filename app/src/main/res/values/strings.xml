@@ -13,13 +13,15 @@
 
     <string name="create_sleep_record_fragment_label">Create New Sleep Record</string>
 
-    <string name="create_sleep_record_fragment_message">Choose duration</string>
+    <string name="create_sleep_record_fragment_message">How long did you sleep?</string>
     <string name="create_sleep_record_button_label">Save</string>
     <string name="sleep_sum_label">Your sleep sum:</string>
     <string name="sleep_sum_default">0</string>
 
-    <string name="default_date">Date: 2020-01-01</string>
+    <string name="default_date">2020-01-01</string>
 
     <string name="sleep_list_row">%1$d hours, %2$s</string>
+    <string name="textView_date_label">Date</string>
+    <string name="sleep_duration_label">Hours</string>
 
 </resources>

@@ -34,8 +34,7 @@ class CreateSleepRecordActivity : AppCompatActivity(), DatePickerDialog.OnDateSe
         year = today.get(Calendar.YEAR)
         month = today.get(Calendar.MONTH)
         dayOfMonth = today.get(Calendar.DAY_OF_MONTH)
-        val todayString =
-            "Date: " + String.format(Locale.US, "%d/%d/%d", year, month + 1, dayOfMonth)
+        val todayString = String.format(Locale.US, "%d/%d/%d", year, month + 1, dayOfMonth)
 
         binding.textViewDate.text = todayString
         binding.textViewDate.inputType = InputType.TYPE_NULL
@@ -62,7 +61,7 @@ class CreateSleepRecordActivity : AppCompatActivity(), DatePickerDialog.OnDateSe
         this.year = year
         this.month = monthOfYear
         this.dayOfMonth = dayOfMonth
-        val str = "Date: " + String.format(Locale.US, "%d/%d/%d", year, monthOfYear + 1, dayOfMonth)
+        val str = String.format(Locale.US, "%d/%d/%d", year, monthOfYear + 1, dayOfMonth)
         binding.textViewDate.text = str
 
     }
