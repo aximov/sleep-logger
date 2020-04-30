@@ -3,6 +3,7 @@ package com.aximov.sleeplogger
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -10,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aximov.sleeplogger.databinding.ActivityMainBinding
 import com.github.mikephil.charting.animation.Easing
@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        prepareSleepRecordList()
-        prepareSleepSum()
+        setSleepRecordListObserver()
+        setSleepSumObserver()
         prepareChart()
         prepareCreateButton()
     }
 
-    private fun prepareSleepRecordList() {
+    private fun setSleepRecordListObserver() {
         val adapter = SleepListAdapter(this)
         val layoutManager = LinearLayoutManager(this)
         binding.apply {
@@ -47,12 +47,15 @@ class MainActivity : AppCompatActivity() {
 
         sleepViewModel = ViewModelProvider(this).get(SleepViewModel::class.java)
         sleepViewModel.allSleeps.observe(this, Observer { sleeps ->
-            // Update the cached copy of the sleeps in the adapter.
-            sleeps?.let { adapter.setSleeps(it) }
+            // Update the cached copy of the sleeps in the adapter and the chart
+            sleeps?.let {
+                adapter.setSleeps(it)
+                updateChartData(it)
+            }
         })
     }
 
-    private fun prepareSleepSum() {
+    private fun setSleepSumObserver() {
         sleepViewModel.sleepLengthSum.observe(this, Observer { sleepSum ->
             sleepSum?.let { binding.sleepSum.text = it.toString() }
         })
@@ -80,13 +83,25 @@ class MainActivity : AppCompatActivity() {
             isClickable = true
             legend.isEnabled = false //凡例
             setScaleEnabled(false)
-            animateY(2400, Easing.Linear)
+            animateY(1800, Easing.Linear)
+            xAxis.setDrawLabels(false)
         }
+    }
 
-        val entries = ArrayList<BarEntry>().apply {
-            add(BarEntry(5f, 10f))
-            add(BarEntry(6f, 18f))
-            add(BarEntry(17f, 3f))
+    private fun updateChartData(sleeps: List<Sleep>?) {
+        Log.d("DEBUG", "Updating chart data")
+
+        val chart = binding.chart
+        chart.clear()
+        val entries = ArrayList<BarEntry>()
+
+        if (sleeps != null) {
+            for (sleep in sleeps) {
+                val x: Float = sleep.date.time.div(24 * 60 * 60 * 1000).toFloat()
+                val y: Float = sleep.length.toFloat()
+                Log.d("DEBUG", " [1] entries try to add ($x), ($y)")
+                entries.add(BarEntry(x, y))
+            }
         }
 
         val dataSet = BarDataSet(entries, "Series 1")

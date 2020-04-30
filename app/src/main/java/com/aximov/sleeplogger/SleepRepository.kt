@@ -11,4 +11,8 @@ class SleepRepository(private val sleepDao: SleepDao) {
     suspend fun insert(sleep: Sleep) {
         sleepDao.insert(sleep)
     }
+
+    suspend fun deleteAll() {
+        sleepDao.deleteAll()
+    }
 }

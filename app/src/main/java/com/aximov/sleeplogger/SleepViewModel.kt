@@ -23,4 +23,8 @@ class SleepViewModel(application: Application) : AndroidViewModel(application) {
     fun insert(sleep: Sleep) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(sleep)
     }
+
+    fun deleteAll() = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteAll()
+    }
 }
