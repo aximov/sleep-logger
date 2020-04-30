@@ -8,8 +8,8 @@
 
 ## Screenshots
 
-![Home](https://raw.githubusercontent.com/aximov/sleep-logger/master/doc/home.png)
+<img src="https://raw.githubusercontent.com/aximov/sleep-logger/master/doc/home.png" alt="home" title="home" width=400px>
 
-![New](https://raw.githubusercontent.com/aximov/sleep-logger/master/doc/new.png)
+<img src="https://raw.githubusercontent.com/aximov/sleep-logger/master/doc/new.png" alt="new" title="new" width=400px>
 
-![Datepicker](https://raw.githubusercontent.com/aximov/sleep-logger/master/doc/datepicker.png)
+<img src="https://raw.githubusercontent.com/aximov/sleep-logger/master/doc/datepicker.png" alt="date-picker" title="date-picker" width=400px>
