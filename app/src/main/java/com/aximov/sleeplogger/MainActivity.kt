@@ -31,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        prepareSleepRecordList()
+        prepareSleepSum()
+        prepareChart()
+        prepareCreateButton()
+    }
+
+    private fun prepareSleepRecordList() {
         val adapter = SleepListAdapter(this)
         val layoutManager = LinearLayoutManager(this)
         binding.apply {
@@ -43,10 +50,15 @@ class MainActivity : AppCompatActivity() {
             // Update the cached copy of the sleeps in the adapter.
             sleeps?.let { adapter.setSleeps(it) }
         })
+    }
+
+    private fun prepareSleepSum() {
         sleepViewModel.sleepLengthSum.observe(this, Observer { sleepSum ->
             sleepSum?.let { binding.sleepSum.text = it.toString() }
         })
+    }
 
+    private fun prepareChart() {
         val chart = binding.chart
         chart.xAxis.setDrawGridLines(false)
         chart.axisLeft.apply {
@@ -81,8 +93,9 @@ class MainActivity : AppCompatActivity() {
         val lines = ArrayList<IBarDataSet>()
         lines.add(dataSet)
         chart.data = BarData(lines)
+    }
 
-
+    private fun prepareCreateButton() {
         binding.floatingActionButtonFirst.setOnClickListener {
             val intent = Intent(this@MainActivity, CreateSleepRecordActivity::class.java)
             startActivityForResult(intent, createSleepRecordActivityRequestCode)
