@@ -2,7 +2,7 @@
     <string name="app_name">Sleep Logger</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="home_fragment_label">Home</string>
+    <string name="home_fragment_label">Sleep Logger</string>
     <string name="details_fragment_label">Details</string>
     <string name="next">Switch view</string>
     <string name="previous">Back to Home</string>
